@@ -10,7 +10,18 @@
         die();
     }
 
-    header('Access-Control-Allow-Origin: *');
+    $http_origin = $_SERVER['HTTP_ORIGIN'];
+    $allow = [
+        "https://app.jloads.com",
+        "http://app.jloads.com",
+        "https://js.jloads.com",
+        "http://js.jloads.com",
+    ];
+    if (in_array($http_origin, $allow)))
+    {
+        header("Access-Control-Allow-Origin: $http_origin");
+    }
+
     header("Access-Control-Allow-Credentials: true");
     header('Access-Control-Allow-Methods: GET, PUT, POST, DELETE, OPTIONS');
     header("Access-Control-Expose-Headers: Content-Length, X-JSON");
