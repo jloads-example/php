@@ -11,13 +11,13 @@
     }
 
     $http_origin = $_SERVER['HTTP_ORIGIN'];
-    $allow = [
+    $allowed_origins = [
         "https://app.jloads.com",
         "http://app.jloads.com",
         "https://js.jloads.com",
         "http://js.jloads.com",
     ];
-    if (in_array($http_origin, $allow)))
+    if (in_array($http_origin, $allowed_origins)))
     {
         header("Access-Control-Allow-Origin: $http_origin");
     }
