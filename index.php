@@ -10,6 +10,9 @@
         die();
     }
 
+var_dump($_SERVER['HTTP_ORIGIN']);
+var_dump($_SERVER);
+die;
     $http_origin = $_SERVER['HTTP_ORIGIN'];
     $allowed_origins = [
         "https://app.jloads.com",
