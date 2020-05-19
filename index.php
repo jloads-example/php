@@ -16,6 +16,8 @@
         "http://app.jloads.com",
         "https://js.jloads.com",
         "http://js.jloads.com",
+        "https://localhost",
+        "http://localhost",
     ];
     if (in_array($http_origin, $allowed_origins)))
     {
