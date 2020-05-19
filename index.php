@@ -14,7 +14,7 @@
     var_dump($_SERVER['HTTP_ORIGIN']);
     var_dump($_SERVER);
     return 0;
-
+*/
     $http_origin = $_SERVER['HTTP_ORIGIN'];
     $allowed_origins = [
         "https://app.jloads.com",
@@ -28,7 +28,7 @@
     {
         header("Access-Control-Allow-Origin: $http_origin");
     }
-*/
+
     header("Access-Control-Allow-Credentials: true");
     header('Access-Control-Allow-Methods: GET, PUT, POST, DELETE, OPTIONS');
     header("Access-Control-Expose-Headers: Content-Length, X-JSON");
