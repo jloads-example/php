@@ -10,6 +10,7 @@
         die();
     }
 */
+/*
     var_dump($_SERVER['HTTP_ORIGIN']);
     var_dump($_SERVER);
     return 0;
@@ -27,7 +28,7 @@
     {
         header("Access-Control-Allow-Origin: $http_origin");
     }
-
+*/
     header("Access-Control-Allow-Credentials: true");
     header('Access-Control-Allow-Methods: GET, PUT, POST, DELETE, OPTIONS');
     header("Access-Control-Expose-Headers: Content-Length, X-JSON");
