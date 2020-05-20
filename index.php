@@ -1,5 +1,6 @@
 <?php
 $result = [];
+$result['time'] = [];
 $result['time']['start'] = time();
 
 /*
