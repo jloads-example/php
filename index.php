@@ -22,7 +22,9 @@
         "https://js.jloads.com",
         "http://js.jloads.com",
         "https://localhost",
+        "https://localhost:8000",
         "http://localhost",
+        "http://localhost:8000",
     ];
 
     if (in_array($http_origin, $allowed_origins))
