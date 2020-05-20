@@ -29,7 +29,7 @@ class Message
     }
 
 
-    public function error($info, $var)
+    public function error($info, $var = [])
     {
         $this->add($info, $var, 'error');
     }
@@ -57,7 +57,7 @@ class Message
             }
         }
 
-        $this->list[] = $info . '( ' . $vars . ')';
+        $this->list[$type][] = $info . '( ' . $vars . ')';
     }
 
 

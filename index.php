@@ -112,7 +112,7 @@ switch ($method) {
         break;
 
     default:
-        $message->error('Problem z połączeniem, metoda nie rozpoznana');
+        $message->error('Problem z połączeniem, metoda nie rozpoznana', $method);
         break;
 }
 
