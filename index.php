@@ -72,6 +72,9 @@ $method = 'GET';
 if (!empty($_SERVER['REQUEST_METHOD'])) {
     $method = $_SERVER['REQUEST_METHOD'];
 }
+
+$result = [];
+
 switch ($method) {
     case 'POST':
 //        $model = getFromArray($_REQUEST);
@@ -105,7 +108,6 @@ switch ($method) {
 
 $result['message']['error'] = $message->showType('error');
 
-$result = [];
 $result['time'] = [];
 $result['time']['start'] = $start;
 $result['time']['stop'] = time();
