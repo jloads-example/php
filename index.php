@@ -1,4 +1,7 @@
 <?php
+$result = [];
+$result['time']['start'] = time();
+
 /*
     if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
         header('Access-Control-Allow-Origin: *');
@@ -64,7 +67,7 @@ $id = getFromArray($_GET);
 
 $message = new Visitor\Newsletter\Message();
 $json = '{}';
-$result = [];
+
 $rest = new Visitor\Newsletter\Rest();
 
 $method = 'GET';
@@ -103,6 +106,8 @@ switch ($method) {
 
 
 $result['message']['error'] = $message->showType('error');
+$result['time']['stop'] = time();
+$result['time']['during'] = $result['time']['stop'] - $result['time']['start'];
 
 $json = json_encode($result);
 
