@@ -1,5 +1,5 @@
 <?php
-$start = (string) microtime(true);
+$start = microtime(true);
 
 /*
     if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
@@ -125,9 +125,11 @@ switch ($method) {
 $result['message']['error'] = $message->showType('error');
 
 $result['time'] = [];
-$result['time']['start'] = $start;
-$result['time']['stop'] = (string) microtime(true);
+$result['time']['start'] = number_format( $start, 6, '.', '');
+$stop = microtime(true);
+$result['time']['stop'] = number_format( $stop, 6, '.', '');
 $result['time']['during'] = $result['time']['stop'] - $result['time']['start'];
+
 
 $json = json_encode($result);
 
