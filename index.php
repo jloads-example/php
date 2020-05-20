@@ -32,11 +32,11 @@
         header("Access-Control-Allow-Origin: $http_origin");
     }
 
-    header("Access-Control-Allow-Credentials: true");
+    header('Access-Control-Allow-Credentials: true');
     header('Access-Control-Allow-Methods: GET, PUT, POST, DELETE, OPTIONS');
-    header("Access-Control-Expose-Headers: Content-Length, X-JSON");
+    header('Access-Control-Expose-Headers: Content-Length, X-JSON');
     header('Access-Control-Max-Age: 86400');
-    header('Access-Control-Allow-Headers: Origin, Content-Type, X-Requested-With, X-Auth-Token , Authorization, Access-Control-Allow-Headers');
+    header('Access-Control-Allow-Headers: Origin, Content-Type, X-Requested-With, X-Auth-Token , Authorization, Access-Control-Allow-Headers, Access-Control-Expose-Headers, Access-Control-Allow-Methods');
     header('Content-Type: application/json');
 
 /*
