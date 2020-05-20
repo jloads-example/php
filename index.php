@@ -37,6 +37,7 @@ $start = (string) microtime(true);
         "http://localhost:3000",
 
         "http://localhost:3001",
+        "http://app.faas.ovh",
         "https://app.faas.ovh",
 
         "http://localhost:8000",
