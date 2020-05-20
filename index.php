@@ -107,6 +107,7 @@ switch ($method) {
 
 
 $result['message']['error'] = $message->showType('error');
+
 $result['time']['stop'] = time();
 $result['time']['during'] = $result['time']['stop'] - $result['time']['start'];
 
