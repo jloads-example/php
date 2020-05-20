@@ -8,6 +8,14 @@ namespace Visitor\Newsletter;
 class Rest //implements Crud
 {
 
+    public function getId() {
+        return $id = getFromArray($_GET);
+    }
+
+//    public function getTime() {
+//        return $id = getFromArray($_GET);
+//    }
+
     public function post($model)
     {
         return [
@@ -20,11 +28,11 @@ class Rest //implements Crud
         ];
     }
 
-    public function get($id)
+    public function get()
     {
         return [
             "input" => [
-                "id" => $id,
+                "id" => $this->getId(),
             ],
             "message" => [
                 'info' => 'GET READ',
@@ -32,11 +40,11 @@ class Rest //implements Crud
         ];
     }
 
-    public function put($id, $model)
+    public function put($model)
     {
         return [
             "input" => [
-                "id" => $id,
+                "id" => $this->getId(),
                 "data" => $model,
             ],
 //            "output" => $put_vars,
@@ -46,11 +54,11 @@ class Rest //implements Crud
         ];
     }
 
-    public function delete($id)
+    public function delete()
     {
         return [
             "input" => [
-                "id" => $id,
+                "id" => $this->getId(),
             ],
             "message" => [
                 'info' => 'DELETE',

@@ -1,7 +1,5 @@
 <?php
-$result = [];
-$result['time'] = [];
-$result['time']['start'] = time();
+$start = time();
 
 /*
     if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
@@ -64,7 +62,6 @@ include_once 'src/Rest.php';
 //$id = explode('/', substr(@$_SERVER['PATH_INFO'], 1));
 
 
-$id = getFromArray($_GET);
 
 $message = new Visitor\Newsletter\Message();
 $json = '{}';
@@ -86,28 +83,31 @@ switch ($method) {
         break;
 
     case 'GET':
-        $result = $rest->get($id);
+        $result = $rest->get();
         break;
 
     case 'PUT':
         parse_str(file_get_contents("php://input"), $put_vars);
         $model = getFromArray($put_vars);
         $model = json_decode($model, true);
-        $result = $rest->put($id, $model);
+        $result = $rest->put($model);
         break;
 
     case 'DELETE':
-        $result = $rest->delete($id);
+        $result = $rest->delete();
         break;
 
     default:
-        $message->error('Problem z połączeniem, metoda nie rozpoznana', $id);
+        $message->error('Problem z połączeniem, metoda nie rozpoznana');
         break;
 }
 
 
 $result['message']['error'] = $message->showType('error');
 
+$result = [];
+$result['time'] = [];
+$result['time']['start'] = $start;
 $result['time']['stop'] = time();
 $result['time']['during'] = $result['time']['stop'] - $result['time']['start'];
 
