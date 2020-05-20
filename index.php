@@ -17,7 +17,15 @@ $start = (string) microtime(true);
     var_dump($_SERVER);
     return 0;
 */
-    $http_origin = $_SERVER['HTTP_ORIGIN'];
+
+    if(!empty($_SERVER['HTTP_ORIGIN'])){
+        $http_origin = $_SERVER['HTTP_ORIGIN'];
+    } else {
+        //var_dump( $_SERVER );
+        //$http_origin = $_SERVER['HTTP_REFERER'];
+        $http_origin = 'http://' . $_SERVER['HTTP_HOST'];
+    }
+
     $allowed_origins = [
         "https://app.jloads.com",
         "http://app.jloads.com",
@@ -27,6 +35,8 @@ $start = (string) microtime(true);
         "https://localhost:8000",
         "http://localhost",
         "http://localhost:8000",
+        "http://localhost:8080",
+        "http://localhost:80",
     ];
 
     if (in_array($http_origin, $allowed_origins))
