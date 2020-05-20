@@ -24,7 +24,8 @@
         "https://localhost",
         "http://localhost",
     ];
-    if (in_array($http_origin, $allowed_origins)))
+
+    if (in_array($http_origin, $allowed_origins))
     {
         header("Access-Control-Allow-Origin: $http_origin");
     }
