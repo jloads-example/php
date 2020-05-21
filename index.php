@@ -39,6 +39,8 @@ $start = (float) microtime(false);
         "http://localhost:3001",
         "http://app.faas.ovh",
         "https://app.faas.ovh",
+        "http://www.faas.ovh",
+        "https://www.faas.ovh",
 
         "http://localhost:8000",
         "http://localhost:8080",
